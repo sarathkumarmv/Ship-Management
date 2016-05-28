@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.actions.act_window" id="shipment_action">
+            <field name="name">Shipment Sales</field>
+            <field name="res_model">sales.ship</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Ship" id="menu_ship" parent="base.menu_sale_config_sales" action="shipment_action"/>
+
+        <record model="ir.ui.view" id="sales_ship_tree">
+            <field name="name">sales.ship.tree</field>
+            <field name="model">sales.ship</field>
+            <field name="arch" type="xml">
+                    <tree >
+                        <field name="imo"/>
+                        <field name="Hull_Number"/>
+                        <field name="Engine_Number"/>
+                        <field name="Vessel_Name"/>
+                        <field name="Build_Year"/>
+                        <field name="Ship_Yard"/>
+                        <field name="Ship_Owner"/>
+                        <field name="Ship_Management"/>
+                        <field name="Engine_Builder"/>
+                    </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sales_ship_form">
+            <field name="name">sales.ship.form</field>
+            <field name="model">sales.ship</field>
+            <field name="arch" type="xml">
+                <form string="Shipment Sales">
+                        <sheet>
+                        <group>
+                            <group>
+                            <field name="imo"/>
+                            <field name="Hull_Number"/>
+                            <field name="Engine_Number"/>
+                            <field name="Vessel_Name"/>
+                            <field name="Build_Year"/>
+                            <field name="Ship_Yard"/>
+                            <field name="Ship_Owner"/>
+                            <field name="Ship_Management"/>
+                            <field name="Engine_Builder"/>
+                            </group>
+                        </group>
+                        </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
